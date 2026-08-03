@@ -159,27 +159,42 @@ color:randomColor()
 
 }
 
-// -------- BALLOONS --------
+// -------- 3D BALLOONS FROM BOTH SIDES --------
 
 function createBalloons(){
 
-for(let i=0;i<25;i++){
+const colors=[
+"#ff4d6d",
+"#FFD700",
+"#00E5FF",
+"#00FF99",
+"#7C4DFF",
+"#ff9800"
+];
 
-let balloon=document.createElement("div");
+for(let i=0;i<40;i++){
 
-balloon.className="balloon";
+let b=document.createElement("div");
 
-balloon.style.left=Math.random()*100+"vw";
+b.className="balloon";
 
-balloon.style.animationDuration=(4+Math.random()*4)+"s";
+b.style.background=colors[Math.floor(Math.random()*colors.length)];
 
-balloon.style.background=randomColor();
+if(i%2==0){
 
-document.body.appendChild(balloon);
+b.style.left=(-5+Math.random()*12)+"vw";
 
-setTimeout(()=>{
-balloon.remove();
-},9000);
+}else{
+
+b.style.left=(90+Math.random()*12)+"vw";
+
+}
+
+b.style.animationDuration=(5+Math.random()*4)+"s";
+
+document.body.appendChild(b);
+
+setTimeout(()=>b.remove(),9000);
 
 }
 
@@ -189,25 +204,23 @@ balloon.remove();
 
 function createHearts(){
 
-for(let i=0;i<40;i++){
+for(let i=0;i<60;i++){
 
-let heart=document.createElement("div");
+let h=document.createElement("div");
 
-heart.className="heart";
+h.className="heart";
 
-heart.innerHTML="❤️";
+h.innerHTML="❤️";
 
-heart.style.left=Math.random()*100+"vw";
+h.style.left=Math.random()*100+"vw";
 
-heart.style.fontSize=(20+Math.random()*25)+"px";
+h.style.fontSize=(18+Math.random()*28)+"px";
 
-heart.style.animationDuration=(4+Math.random()*4)+"s";
+h.style.animationDuration=(3+Math.random()*4)+"s";
 
-document.body.appendChild(heart);
+document.body.appendChild(h);
 
-setTimeout(()=>{
-heart.remove();
-},8000);
+setTimeout(()=>h.remove(),7000);
 
 }
 
@@ -242,6 +255,46 @@ star.style.boxShadow="0 0 15px white";
 star.style.animation=`twinkle ${Math.random()*3+2}s infinite`;
 
 particleLayer.appendChild(star);
+
+}
+
+// -------- FIREWORKS --------
+
+function fireworks(){
+
+for(let k=0;k<5;k++){
+
+setTimeout(()=>{
+
+const x=Math.random()*canvas.width;
+
+const y=Math.random()*canvas.height*.45;
+
+for(let i=0;i<150;i++){
+
+pieces.push({
+
+x:x,
+
+y:y,
+
+r:Math.random()*5+2,
+
+speed:Math.random()*7+2,
+
+angle:(Math.PI*2/150)*i,
+
+rotate:0,
+
+color:randomColor()
+
+});
+
+}
+
+},k*400);
+
+}
 
 }
 
