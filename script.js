@@ -38,30 +38,36 @@ function celebrate(){
 
 music.play().catch(()=>{});
 
-pieces=[];
+// ===== CONFETTI CANNONS =====
 
-// Lots of confetti
-for(let i=0;i<500;i++){
-
-pieces.push({
-
-x:Math.random()*canvas.width,
-
-y:-20,
-
-r:Math.random()*8+4,
-
-speed:Math.random()*7+3,
-
-angle:Math.random()*360,
-
-rotate:Math.random()*10,
-
-color:randomColor()
-
+confetti({
+particleCount:600,
+spread:360,
+startVelocity:70,
+origin:{x:0,y:1}
 });
 
-}
+confetti({
+particleCount:600,
+spread:360,
+startVelocity:70,
+origin:{x:1,y:1}
+});
+
+setTimeout(()=>{
+
+confetti({
+particleCount:1000,
+spread:360,
+startVelocity:90,
+origin:{x:.5,y:.6}
+});
+
+},700);
+
+// ============================
+
+pieces=[];
 
 animate();
 
@@ -134,30 +140,6 @@ requestAnimationFrame(animate);
 
 }
 
-// -------- FIREWORKS --------
-
-function fireworks(){
-
-const x=Math.random()*canvas.width;
-const y=Math.random()*canvas.height/2;
-
-for(let i=0;i<120;i++){
-
-pieces.push({
-
-x:x,
-y:y,
-r:Math.random()*6+2,
-speed:Math.random()*8+2,
-angle:(Math.PI*2/120)*i,
-rotate:0,
-color:randomColor()
-
-});
-
-}
-
-}
 
 // -------- 3D BALLOONS FROM BOTH SIDES --------
 
