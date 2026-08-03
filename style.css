@@ -61,7 +61,7 @@ padding:20px;
 
 }
 
-.page.active{
+.page.{
 
 opacity:1;
 visibility:visible;
