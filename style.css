@@ -7,7 +7,8 @@ font-family:'Poppins',sans-serif;
 
 body{
 background:linear-gradient(135deg,#050816,#0d1b45,#40125f);
-overflow:hidden;
+overflow-y:auto;
+    overflow-x:hidden;
 color:#fff;
 height:100vh;
 }
@@ -41,10 +42,10 @@ transform:translateY(-220px);
 }
 
 .page{
-
-position:absolute;
-width:100%;
-height:100vh;
+    position:relative;
+    width:100%;
+    min-height:100vh;
+}
 
 display:flex;
 justify-content:center;
