@@ -1,213 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Ajay 🎂</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Ajay 🎂</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
-</head>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-<body>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  </head>
 
-<div id="particles"></div>
+  <body>
+    <div id="particles"></div>
 
-<!-- Page 1 -->
+    <!-- Page 1 -->
 
-<section class="page active" id="page1">
+    <section class="page active" id="page1">
+      <div class="glass">
+        <h3>🎁</h3>
 
-<div class="glass">
+        <h1>A Special Surprise</h1>
 
-<h3>🎁</h3>
+        <p>Someone has prepared something special for you...</p>
 
-<h1>A Special Surprise</h1>
+        <button onclick="nextPage(2)">Open Gift ❤️</button>
+      </div>
+    </section>
 
-<p>
-Someone has prepared something special for you...
-</p>
+    <!-- Page 2 -->
 
-<button onclick="nextPage(2)">
-Open Gift ❤️
-</button>
+    <section class="page" id="page2">
+      <div class="glass">
+        <h2>🎉 HAPPY BIRTHDAY 🎉</h2>
 
-</div>
+        <h1>AJAY</h1>
 
-</section>
+        <p>May your smile stay bright, your dreams become reality, and every new day bring another beautiful memory.</p>
 
-<!-- Page 2 -->
+        <button onclick="nextPage(3)">Next →</button>
+      </div>
+    </section>
 
-<section class="page" id="page2">
+    <!-- Page 3 -->
 
-<div class="glass">
+    <section class="page" id="page3">
+      <div class="glass">
+        <h2>Your Smile ✨</h2>
 
-<h2>🎉 HAPPY BIRTHDAY 🎉</h2>
+        <img src="images/ajay1.jpg" />
 
-<h1>AJAY</h1>
+        <p>Every picture tells a story, and yours tells one filled with happiness and confidence.</p>
 
-<p>
+        <button onclick="nextPage(4)">Next →</button>
+      </div>
+    </section>
 
-May your smile stay bright,
-your dreams become reality,
-and every new day bring
-another beautiful memory.
+    <!-- Page 4 -->
 
-</p>
+    <section class="page" id="page4">
+      <div class="glass">
+        <h2>Another Memory ❤️</h2>
 
-<button onclick="nextPage(3)">
-Next →
-</button>
+        <img src="images/ajay2.jpg" />
 
-</div>
+        <p>Stay humble. Stay strong. Stay unstoppable.</p>
 
-</section>
+        <button onclick="nextPage(5)">Next →</button>
+      </div>
+    </section>
 
-<!-- Page 3 -->
+    <!-- Page 5 -->
 
-<section class="page" id="page3">
+    <section class="page" id="page5">
+      <div class="glass">
+        <h2>Birthday Wishes 🎂</h2>
 
-<div class="glass">
+        <p>
+          Here's to another year of adventures, success, peace, love, good health, and unforgettable memories. Never
+          stop believing in yourself. The best chapters of your life are still waiting to be written.
+        </p>
 
-<h2>Your Smile ✨</h2>
+        <button onclick="nextPage(6)">Final Surprise ✨</button>
+      </div>
+    </section>
 
-<img src="images/ajay1.jpg">
+    <!-- Page 6 -->
 
-<p>
+    <section class="page" id="page6">
+      <div class="glass">
+        <h1 class="neon">🎂 Happy Birthday Ajay 🎂</h1>
 
-Every picture tells a story,
-and yours tells one filled
-with happiness and confidence.
+        <h3>"Dream Big. Work Hard. Stay Humble. Enjoy Every Moment."</h3>
 
-</p>
+        <p>
+          May this birthday bring countless blessings, great opportunities, and endless happiness. Have an amazing year
+          ahead! ❤️
+        </p>
 
-<button onclick="nextPage(4)">
-Next →
-</button>
+        <button onclick="celebrate()">Celebrate 🎉</button>
+      </div>
+    </section>
 
-</div>
+    <audio id="music" loop="">
+      <source src="birthday.mp3" type="audio/mpeg" />
+    </audio>
 
-</section>
+    <canvas id="confetti"></canvas>
 
-<!-- Page 4 -->
-
-<section class="page" id="page4">
-
-<div class="glass">
-
-<h2>Another Memory ❤️</h2>
-
-<img src="images/ajay2.jpg">
-
-<p>
-
-Stay humble.
-
-Stay strong.
-
-Stay unstoppable.
-
-</p>
-
-<button onclick="nextPage(5)">
-Next →
-</button>
-
-</div>
-
-</section>
-
-<!-- Page 5 -->
-
-<section class="page" id="page5">
-
-<div class="glass">
-
-<h2>Birthday Wishes 🎂</h2>
-
-<p>
-
-Here's to another year of
-adventures,
-
-success,
-
-peace,
-
-love,
-
-good health,
-
-and unforgettable memories.
-
-Never stop believing in yourself.
-
-The best chapters of your life
-are still waiting to be written.
-
-</p>
-
-<button onclick="nextPage(6)">
-Final Surprise ✨
-</button>
-
-</div>
-
-</section>
-
-<!-- Page 6 -->
-
-<section class="page" id="page6">
-
-<div class="glass">
-
-<h1 class="neon">🎂 Happy Birthday Ajay 🎂</h1>
-
-<h3>
-
-"Dream Big.
-
-Work Hard.
-
-Stay Humble.
-
-Enjoy Every Moment."
-
-</h3>
-
-<p>
-
-May this birthday bring
-countless blessings,
-great opportunities,
-and endless happiness.
-
-Have an amazing year ahead!
-
-❤️
-
-</p>
-
-<button onclick="celebrate()">
-
-Celebrate 🎉
-
-</button>
-
-</div>
-
-</section>
-  
-<audio id="music" loop>
-    <source src="birthday.mp3" type="audio/mpeg">
-</audio>
-
-<canvas id="confetti"></canvas>
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-<script src="script.js"></script>
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
+
