@@ -4,15 +4,17 @@ const music = document.getElementById("music");
 
 function nextPage(pageNumber){
 
-document.querySelectorAll(".page").forEach(page=>{
-page.classList.remove("active");
-});
+    document.getElementById("page"+pageNumber)
+        .classList.add("active");
 
-document.getElementById("page"+pageNumber).classList.add("active");
+    if(pageNumber >= 2){
+        music.play().catch(()=>{});
+    }
 
-if(pageNumber>=2){
-music.play().catch(()=>{});
-}
+    window.scrollTo({
+        top: document.getElementById("page"+pageNumber).offsetTop,
+        behavior: "smooth"
+    });
 
 }
 
