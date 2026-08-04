@@ -45,29 +45,19 @@ transform:translateY(-220px);
     position:relative;
     width:100%;
     min-height:100vh;
-}
 
-display:flex;
-justify-content:center;
-align-items:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-opacity:0;
-visibility:visible;
+    padding:20px;
 
-transform:scale(.92);
-
-transition:.8s;
-
-padding:20px;
-
-.page{
-    opacity:0;
-    visibility:hidden;
-}
-
-.page.active{
     opacity:1;
     visibility:visible;
+
+    transform:scale(1);
+
+    transition:.8s;
 }
 
 .glass{
