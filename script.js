@@ -40,9 +40,18 @@ let pieces=[];
 
 function celebrate(){
 
+music.play().catch(()=>{});
+
+// Big Confetti
+confetti({
+    particleCount:800,
+    spread:360,
+    startVelocity:70
+});
+
 pieces=[];
 
-for(let i=0;i<250;i++){
+for(let i=0;i<350;i++){
 
 pieces.push({
 
@@ -65,6 +74,11 @@ color:randomColor()
 }
 
 animate();
+
+// Extra Effects
+createBalloons();
+createHearts();
+createGalaxy();
 
 }
 
@@ -95,6 +109,90 @@ return colors[Math.floor(Math.random()*colors.length)];
 }
 
 function animate(){
+
+...
+
+}
+// -------- BALLOONS --------
+
+function createBalloons(){
+
+const colors=[
+"#ff4d6d",
+"#FFD700",
+"#00E5FF",
+"#00FF99",
+"#7C4DFF",
+"#ff9800"
+];
+
+for(let i=0;i<35;i++){
+
+let b=document.createElement("div");
+
+b.className="balloon";
+
+b.style.background=colors[Math.floor(Math.random()*colors.length)];
+
+b.style.left=Math.random()*100+"vw";
+
+b.style.animationDuration=(5+Math.random()*4)+"s";
+
+document.body.appendChild(b);
+
+setTimeout(()=>b.remove(),9000);
+
+}
+
+}
+
+// -------- HEARTS --------
+
+function createHearts(){
+
+for(let i=0;i<60;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(20+Math.random()*20)+"px";
+
+h.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),7000);
+
+}
+
+}
+
+// -------- GALAXY --------
+
+function createGalaxy(){
+
+for(let i=0;i<150;i++){
+
+let star=document.createElement("div");
+
+star.className="galaxy";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";
+
+star.style.animationDuration=(2+Math.random()*5)+"s";
+
+document.body.appendChild(star);
+
+}
+
+}
 
 ctx.clearRect(0,0,canvas.width,canvas.height);
 
