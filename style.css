@@ -59,14 +59,14 @@ transition:.8s;
 
 padding:20px;
 
+.page{
+    opacity:0;
+    visibility:hidden;
 }
 
 .page.active{
-
-opacity:1;
-visibility:visible;
-transform:scale(1);
-
+    opacity:1;
+    visibility:visible;
 }
 
 .glass{
