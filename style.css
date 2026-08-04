@@ -7,8 +7,7 @@ font-family:'Poppins',sans-serif;
 
 body{
 background:linear-gradient(135deg,#050816,#0d1b45,#40125f);
-overflow-y:auto;
-    overflow-x:hidden;
+overflow:hidden;
 color:#fff;
 height:100vh;
 }
@@ -42,22 +41,32 @@ transform:translateY(-220px);
 }
 
 .page{
-    position:relative;
-    width:100%;
-    min-height:100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+position:absolute;
+width:100%;
+height:100vh;
 
-    padding:20px;
+display:flex;
+justify-content:center;
+align-items:center;
 
-    opacity:1;
-    visibility:visible;
+opacity:0;
+visibility:hidden;
 
-    transform:scale(1);
+transform:scale(.92);
 
-    transition:.8s;
+transition:.8s;
+
+padding:20px;
+
+}
+
+.page.active{
+
+opacity:1;
+visibility:visible;
+transform:scale(1);
+
 }
 
 .glass{
@@ -236,130 +245,3 @@ font-size:17px;
 }
 
 }
-/* ---------- 3D BALLOONS ---------- */
-
-.balloon{
-position:fixed;
-bottom:-180px;
-width:70px;
-height:90px;
-border-radius:50%;
-z-index:9999;
-animation:balloonFloat linear forwards;
-box-shadow:
-inset -10px -15px rgba(0,0,0,.15),
-inset 12px 10px rgba(255,255,255,.35),
-0 0 25px rgba(255,255,255,.5);
-}
-
-.balloon::after{
-content:"";
-position:absolute;
-left:50%;
-top:88px;
-width:2px;
-height:90px;
-background:white;
-}
-
-@keyframes balloonFloat{
-
-0%{
-transform:translateY(0) rotate(0deg);
-}
-
-50%{
-transform:translateY(-60vh) rotate(10deg);
-}
-
-100%{
-transform:translateY(-140vh) rotate(-10deg);
-}
-
-}
-
-/* ---------- HEARTS ---------- */
-
-.heart{
-
-position:fixed;
-bottom:-40px;
-animation:heartFloat linear forwards;
-pointer-events:none;
-z-index:9999;
-
-}
-
-@keyframes heartFloat{
-
-0%{
-
-transform:translateY(0) scale(.5);
-
-opacity:0;
-
-}
-
-20%{
-
-opacity:1;
-
-}
-
-100%{
-
-transform:translateY(-120vh) scale(1.5);
-
-opacity:0;
-
-}
-
-}
-
-/* ---------- NEON TITLE ---------- */
-
-.neon{
-
-font-size:60px;
-
-font-weight:800;
-
-text-align:center;
-
-color:#fff;
-
-animation:neonGlow 1.5s infinite alternate;
-
-}
-
-@keyframes neonGlow{
-
-from{
-
-text-shadow:
-
-0 0 10px #fff,
-
-0 0 20px #00E5FF,
-
-0 0 40px #00E5FF,
-
-0 0 80px #00E5FF;
-
-}
-
-to{
-
-text-shadow:
-
-0 0 20px #fff,
-
-0 0 40px #FF4FA3,
-
-0 0 80px #FF4FA3,
-
-0 0 140px #FFD700;
-
-}
-
-  }
